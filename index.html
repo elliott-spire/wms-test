@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <!-- https://openlayers.org/en/latest/examples/wms-tiled.html -->
+    <!-- https://openlayers.org/en/latest/examples/wms-image.html -->
+    <head>
+        <title>WMS Test</title>
+        <link rel="stylesheet" href="lib/OpenLayers.css" type="text/css">
+        <style>
+            body {
+                background: #283446;
+                color: white;
+            }
+            #map {
+                margin-left: 2%;
+                width: 95%;
+                height: 700px;
+            }
+            #options div {
+                display: inline-block;
+                margin: 10px;
+            }
+        </style>
+        <script src="lib/OpenLayers.js"></script>
+    </head>
+    <body>
+        <form id="options">
+            <div>
+                <p>CRS:</p>
+                <input type="radio" id="epsg4326" name="crs" value="epsg4326">
+                <label for="epsg4326">EPSG:4326</label><br>
+                <input type="radio" id="epsg3857" name="crs" value="epsg3857" checked>
+                <label for="epsg3857">EPSG:3857</label><br>
+            </div>
+            <div>
+                <p>WMS:</p>
+                <input type="radio" id="tiled" name="tiling" value="tiled">
+                <label for="tiled">Tiled</label><br>
+                <input type="radio" id="image" name="tiling" value="image" checked>
+                <label for="image">Image</label><br>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+        <div id="map" class="map"></div>
+        <script src="js/mapmaker.js"></script>
+    </body>
+</html>
